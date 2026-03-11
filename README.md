@@ -11,7 +11,6 @@
 
 <p align="center">
   <a href="mailto:bruno.moraes@estudiantes.utec.com.uy">Email</a> |
-  <a href="https://github.com/brunomorach">GitHub</a> |
   <a href="https://www.linkedin.com/in/bruno-moraes-cheguhem-1249757a">LinkedIn</a>
 </p>
 
