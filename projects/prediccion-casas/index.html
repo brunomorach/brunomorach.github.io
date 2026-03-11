@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediccion de Precios de Casas | Bruno Moraes Portfolio</title>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <style>
+        .project-detail {
+            padding: 60px 0;
+        }
+        .back-link {
+            display: inline-block;
+            margin-bottom: 30px;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
+        .project-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .project-content h1 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+        .project-content h2 {
+            color: var(--secondary-color);
+            margin-top: 40px;
+            margin-bottom: 20px;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 10px;
+        }
+        .project-content h3 {
+            color: var(--text-color);
+            margin-top: 25px;
+            margin-bottom: 15px;
+        }
+        .project-content p {
+            color: var(--text-light);
+            margin-bottom: 15px;
+        }
+        .project-content ul, .project-content ol {
+            color: var(--text-light);
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+        .project-content li {
+            margin-bottom: 8px;
+        }
+        .results-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        .results-table th, .results-table td {
+            border: 1px solid var(--border-color);
+            padding: 12px;
+            text-align: left;
+        }
+        .results-table th {
+            background: var(--bg-secondary);
+            color: var(--primary-color);
+        }
+        .results-table tr:nth-child(even) {
+            background: var(--bg-secondary);
+        }
+        .highlight-row {
+            background: #e8f4fd !important;
+            font-weight: bold;
+        }
+        .tech-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 20px 0;
+        }
+        .tech-badges span {
+            background: var(--primary-color);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9em;
+        }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        .stat-box {
+            background: var(--bg-secondary);
+            padding: 25px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        .stat-box .value {
+            font-size: 2em;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+        .stat-box .label {
+            color: var(--text-light);
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <section class="project-detail">
+        <div class="container">
+            <a href="../../index.html" class="back-link">&larr; Volver al Portfolio</a>
+
+            <div class="project-content">
+                <h1>Prediccion de Precios de Casas en Uruguay</h1>
+
+                <div class="tech-badges">
+                    <span>Python</span>
+                    <span>Pandas</span>
+                    <span>CatBoost</span>
+                    <span>Optuna</span>
+                    <span>Scikit-learn</span>
+                </div>
+
+                <h2>Descripcion del Proyecto</h2>
+                <p>
+                    Modelo de Machine Learning para predecir el precio de casas a la venta en Uruguay,
+                    utilizando datos reales de las principales plataformas inmobiliarias del pais:
+                    <strong>Mercado Libre</strong> y <strong>El Gallito</strong>.
+                </p>
+
+                <h3>Objetivo</h3>
+                <ul>
+                    <li>Guiar la fijacion del precio de venta de una casa</li>
+                    <li>Identificar propiedades sobre-valuadas o infra-valuadas</li>
+                    <li>Detectar oportunidades de compra o correccion de precios</li>
+                    <li>Analizar las variables mas relevantes en la determinacion del precio</li>
+                </ul>
+
+                <h2>Dataset</h2>
+
+                <div class="stats-grid">
+                    <div class="stat-box">
+                        <div class="value">177K</div>
+                        <div class="label">Observaciones Iniciales</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="value">33</div>
+                        <div class="label">Variables Originales</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="value">14.3K</div>
+                        <div class="label">Muestra Final</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="value">11+1</div>
+                        <div class="label">Variables Finales</div>
+                    </div>
+                </div>
+
+                <h3>Variables Principales</h3>
+                <table class="results-table">
+                    <tr>
+                        <th>Variable</th>
+                        <th>Descripcion</th>
+                    </tr>
+                    <tr>
+                        <td>NEIGHBORHOOD</td>
+                        <td>Barrio de la propiedad</td>
+                    </tr>
+                    <tr>
+                        <td>COVERED_AREA</td>
+                        <td>Area cubierta en m2</td>
+                    </tr>
+                    <tr>
+                        <td>BEDROOMS</td>
+                        <td>Cantidad de dormitorios</td>
+                    </tr>
+                    <tr>
+                        <td>FULL_BATHROOMS</td>
+                        <td>Cantidad de banos</td>
+                    </tr>
+                    <tr>
+                        <td>ADDRESS_STATE</td>
+                        <td>Departamento</td>
+                    </tr>
+                    <tr>
+                        <td>CONDITION</td>
+                        <td>Estado de la propiedad</td>
+                    </tr>
+                    <tr>
+                        <td><strong>PRICE</strong></td>
+                        <td><strong>Variable objetivo (USD)</strong></td>
+                    </tr>
+                </table>
+
+                <h2>Preprocesamiento</h2>
+                <ul>
+                    <li>Eliminacion de variables no informativas (IDs, descripciones)</li>
+                    <li>Remocion de <strong>136,560 duplicados</strong> (77% de los datos)</li>
+                    <li>Unificacion de datos de ambas fuentes</li>
+                    <li>Imputacion de nulos por departamento y area cubierta</li>
+                    <li>Conversion de precios a USD segun tipo de cambio historico</li>
+                </ul>
+
+                <h2>Modelos Evaluados</h2>
+                <ol>
+                    <li><strong>Regresion Lineal</strong> - Modelo baseline</li>
+                    <li><strong>Regularizacion (Ridge/Lasso)</strong> - Sin mejora significativa</li>
+                    <li><strong>CatBoost</strong> - Manejo nativo de categoricas</li>
+                    <li><strong>CatBoost + Optuna</strong> - Optimizacion de hiperparametros</li>
+                </ol>
+
+                <h2>Resultados</h2>
+                <table class="results-table">
+                    <tr>
+                        <th>Modelo</th>
+                        <th>MAPE</th>
+                    </tr>
+                    <tr>
+                        <td>Regresion Lineal</td>
+                        <td>39.9%</td>
+                    </tr>
+                    <tr>
+                        <td>CatBoost</td>
+                        <td>33.8%</td>
+                    </tr>
+                    <tr>
+                        <td>CatBoost + Optuna</td>
+                        <td>32.0%</td>
+                    </tr>
+                    <tr class="highlight-row">
+                        <td>CatBoost + Optuna (Montevideo)</td>
+                        <td>25%</td>
+                    </tr>
+                    <tr>
+                        <td>CatBoost + Optuna (Canelones)</td>
+                        <td>26%</td>
+                    </tr>
+                </table>
+
+                <p>
+                    Con un precio promedio de USD 200,000, un MAPE de 25% implica un error tipico de
+                    <strong>+/- USD 50,000</strong> por vivienda en Montevideo.
+                </p>
+
+                <h2>Conclusiones</h2>
+                <ul>
+                    <li>El mejor modelo es <strong>CatBoost optimizado con Optuna</strong></li>
+                    <li>El modelo es util como referencia inicial de precios</li>
+                    <li>Los modelos por departamento muestran mejor rendimiento</li>
+                    <li>El barrio y el area cubierta son los factores mas determinantes</li>
+                </ul>
+
+                <h2>Equipo</h2>
+                <ul>
+                    <li>Nicolas Fripp</li>
+                    <li>Diego Aguiar</li>
+                    <li>Bruno Moraes</li>
+                </ul>
+
+                <p style="margin-top: 40px; text-align: center; color: var(--text-light);">
+                    <em>Proyecto Final - Machine Learning 2025 | Especializacion UTEC/MIT</em>
+                </p>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

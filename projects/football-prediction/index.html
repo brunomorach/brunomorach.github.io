@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>From Data to Goal | Bruno Moraes Portfolio</title>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <style>
+        .project-detail {
+            padding: 60px 0;
+        }
+        .back-link {
+            display: inline-block;
+            margin-bottom: 30px;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
+        .project-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .project-content h1 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+        .project-content h2 {
+            color: var(--secondary-color);
+            margin-top: 40px;
+            margin-bottom: 20px;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 10px;
+        }
+        .project-content h3 {
+            color: var(--text-color);
+            margin-top: 25px;
+            margin-bottom: 15px;
+        }
+        .project-content p {
+            color: var(--text-light);
+            margin-bottom: 15px;
+        }
+        .project-content ul, .project-content ol {
+            color: var(--text-light);
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+        .project-content li {
+            margin-bottom: 8px;
+        }
+        .results-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        .results-table th, .results-table td {
+            border: 1px solid var(--border-color);
+            padding: 12px;
+            text-align: left;
+        }
+        .results-table th {
+            background: var(--bg-secondary);
+            color: var(--primary-color);
+        }
+        .results-table tr:nth-child(even) {
+            background: var(--bg-secondary);
+        }
+        .highlight-row {
+            background: #e8f4fd !important;
+            font-weight: bold;
+        }
+        .tech-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 20px 0;
+        }
+        .tech-badges span {
+            background: var(--primary-color);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9em;
+        }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        .stat-box {
+            background: var(--bg-secondary);
+            padding: 25px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        .stat-box .value {
+            font-size: 2em;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+        .stat-box .label {
+            color: var(--text-light);
+            margin-top: 5px;
+        }
+        .quote-box {
+            background: var(--bg-secondary);
+            border-left: 4px solid var(--primary-color);
+            padding: 20px;
+            margin: 20px 0;
+            font-style: italic;
+            color: var(--text-light);
+        }
+        .class-distribution {
+            display: flex;
+            gap: 20px;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+        .class-item {
+            flex: 1;
+            min-width: 120px;
+            text-align: center;
+            padding: 15px;
+            border-radius: 8px;
+        }
+        .class-item.home {
+            background: #dcfce7;
+            color: #166534;
+        }
+        .class-item.draw {
+            background: #fef3c7;
+            color: #92400e;
+        }
+        .class-item.away {
+            background: #fee2e2;
+            color: #991b1b;
+        }
+        .class-item .percent {
+            font-size: 1.8em;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <section class="project-detail">
+        <div class="container">
+            <a href="../../index.html" class="back-link">&larr; Volver al Portfolio</a>
+
+            <div class="project-content">
+                <h1>From Data to Goal</h1>
+                <p style="font-size: 1.2em; color: var(--text-color);">Prediccion de Partidos de Futbol - La Liga Espanola</p>
+
+                <div class="tech-badges">
+                    <span>Python</span>
+                    <span>Random Forest</span>
+                    <span>XGBoost</span>
+                    <span>LightGBM</span>
+                    <span>Optuna</span>
+                </div>
+
+                <h2>Descripcion del Proyecto</h2>
+                <p>
+                    Sistema de Machine Learning para predecir resultados de partidos de futbol de
+                    La Liga espanola. El proyecto explora la posibilidad de predecir outcomes
+                    (victoria local, empate, victoria visitante) usando datos historicos y odds de apuestas.
+                </p>
+
+                <div class="quote-box">
+                    "People want to profit from football and know the outcomes in advance, but the
+                    unpredictable nature of this sport makes this nearly impossible, therefore we
+                    created an ML model to predict football matches."
+                </div>
+
+                <h2>Dataset</h2>
+
+                <div class="stats-grid">
+                    <div class="stat-box">
+                        <div class="value">3,591</div>
+                        <div class="label">Partidos</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="value">116</div>
+                        <div class="label">Features</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="value">10</div>
+                        <div class="label">Temporadas</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="value">2</div>
+                        <div class="label">Fuentes</div>
+                    </div>
+                </div>
+
+                <h3>Fuentes de Datos</h3>
+                <ul>
+                    <li><strong>Football DataCo</strong>: Estadisticas de partidos, goles, tarjetas, tiros, corners</li>
+                    <li><strong>Transfermarkt</strong>: Valor de mercado, edad promedio, jugadores extranjeros</li>
+                </ul>
+
+                <h3>Distribucion de Clases (Desbalanceada)</h3>
+                <div class="class-distribution">
+                    <div class="class-item home">
+                        <div class="percent">45.1%</div>
+                        <div>Victoria Local</div>
+                    </div>
+                    <div class="class-item draw">
+                        <div class="percent">28.5%</div>
+                        <div>Empate</div>
+                    </div>
+                    <div class="class-item away">
+                        <div class="percent">26.4%</div>
+                        <div>Victoria Visitante</div>
+                    </div>
+                </div>
+
+                <h2>Hallazgos Clave</h2>
+                <ul>
+                    <li>Resultado mas comun: <strong>1-1</strong> (12.7% de ocurrencia)</li>
+                    <li>El equipo local gana el <strong>45.2%</strong> de los partidos</li>
+                    <li>Equipos locales tienen mas tiros, corners y tiros al arco</li>
+                    <li>Visitantes reciben mas tarjetas amarillas</li>
+                    <li><strong>Efecto COVID</strong>: La ventaja local disminuyo durante la pandemia</li>
+                    <li>Las casas de apuestas tienen modelos bastante precisos</li>
+                </ul>
+
+                <h2>Modelos y Resultados</h2>
+
+                <h3>Modelo Pre-Partido</h3>
+                <table class="results-table">
+                    <tr>
+                        <th>Modelo</th>
+                        <th>F1-Score</th>
+                        <th>Accuracy</th>
+                    </tr>
+                    <tr class="highlight-row">
+                        <td>Random Forest</td>
+                        <td>0.52</td>
+                        <td>0.51</td>
+                    </tr>
+                    <tr>
+                        <td>LightGBM</td>
+                        <td>0.50</td>
+                        <td>0.54</td>
+                    </tr>
+                    <tr>
+                        <td>XGBoost</td>
+                        <td>0.47</td>
+                        <td>0.48</td>
+                    </tr>
+                </table>
+
+                <h3>Modelo In-Play (con datos del primer tiempo)</h3>
+                <table class="results-table">
+                    <tr>
+                        <th>Modelo</th>
+                        <th>F1-Score</th>
+                        <th>Accuracy</th>
+                    </tr>
+                    <tr class="highlight-row">
+                        <td>Random Forest</td>
+                        <td>0.57</td>
+                        <td>0.56</td>
+                    </tr>
+                    <tr>
+                        <td>LightGBM</td>
+                        <td>0.55</td>
+                        <td>0.54</td>
+                    </tr>
+                    <tr>
+                        <td>XGBoost</td>
+                        <td>0.56</td>
+                        <td>0.54</td>
+                    </tr>
+                </table>
+
+                <p><em>Nota: F1-Score es mejor metrica para clases desbalanceadas.</em></p>
+
+                <h3>Importancia de Features</h3>
+                <ul>
+                    <li><strong>Pre-Partido</strong>: Dominado por odds de casas de apuestas</li>
+                    <li><strong>In-Play</strong>: Dominado por el marcador al medio tiempo</li>
+                </ul>
+
+                <h2>Conclusiones</h2>
+                <ol>
+                    <li><strong>Los modelos funcionan</strong> - Predicen mejor que el baseline</li>
+                    <li><strong>In-Play > Pre-Partido</strong> - Informacion del primer tiempo mejora predicciones</li>
+                    <li><strong>Alta varianza del futbol</strong> - Lograr F1 > 0.6 es extremadamente dificil</li>
+                    <li><strong>Empates son dificiles</strong> - Predecir empates es el mayor desafio</li>
+                    <li><strong>El futbol es futbol</strong> - La impredecibilidad es parte de su esencia</li>
+                </ol>
+
+                <h2>Equipo</h2>
+                <ul>
+                    <li>Nicolas Fripp</li>
+                    <li>Emiliano Brana</li>
+                    <li>Bruno Moraes</li>
+                </ul>
+
+                <p style="margin-top: 40px; text-align: center; color: var(--text-light);">
+                    <em>Proyecto - Taller MIT Enero 2026 | Especializacion UTEC/MIT</em>
+                </p>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

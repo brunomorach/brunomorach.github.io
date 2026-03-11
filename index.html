@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bruno Moraes | Data Science & AI Portfolio</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <img src="assets/images/profile.jpg" alt="Bruno Moraes" class="profile-img">
+            <h1>Bruno Moraes</h1>
+            <p class="subtitle">Data Science & Artificial Intelligence</p>
+            <p class="subtitle">Especializacion UTEC - MIT</p>
+            <div class="social-links">
+                <a href="mailto:bruno.moraes@estudiantes.utec.com.uy">Email</a>
+                <a href="https://github.com/brunomorach" target="_blank">GitHub</a>
+                <a href="https://linkedin.com/in/brunomoraes" target="_blank">LinkedIn</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section class="about">
+        <div class="container">
+            <h2>Sobre Mi</h2>
+            <p>
+                Profesional en formacion en Ciencia de Datos e Inteligencia Artificial con la
+                Especializacion de UTEC en colaboracion con MIT. A lo largo de este programa,
+                he desarrollado competencias solidas en Machine Learning, Deep Learning,
+                analisis de datos y desarrollo de soluciones basadas en IA. Este portafolio
+                presenta proyectos que demuestran mis habilidades tecnicas y capacidad para
+                resolver problemas del mundo real.
+            </p>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects">
+        <div class="container">
+            <h2>Proyectos Destacados</h2>
+            <div class="project-grid">
+
+                <!-- Project 1: House Price Prediction -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>Prediccion de Precios de Casas</h3>
+                        <div class="project-tags">
+                            <span>Machine Learning</span>
+                            <span>Regresion</span>
+                            <span>CatBoost</span>
+                        </div>
+                    </div>
+                    <div class="project-body">
+                        <p>
+                            Modelo predictivo para estimar precios de propiedades inmobiliarias
+                            en Uruguay utilizando datos de Mercado Libre y El Gallito.
+                        </p>
+                        <div class="project-stats">
+                            <div class="stat">
+                                <div class="stat-value">177K</div>
+                                <div class="stat-label">Observaciones</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-value">25%</div>
+                                <div class="stat-label">MAPE (Montevideo)</div>
+                            </div>
+                        </div>
+                        <div class="tech-stack">
+                            <span>Python</span>
+                            <span>Pandas</span>
+                            <span>CatBoost</span>
+                            <span>Optuna</span>
+                            <span>Scikit-learn</span>
+                        </div>
+                        <a href="projects/prediccion-casas/" class="project-link">Ver Proyecto</a>
+                    </div>
+                </div>
+
+                <!-- Project 2: Football Prediction -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>From Data to Goal</h3>
+                        <div class="project-tags">
+                            <span>ML Classification</span>
+                            <span>Sports Analytics</span>
+                        </div>
+                    </div>
+                    <div class="project-body">
+                        <p>
+                            Sistema de prediccion de resultados de partidos de futbol de
+                            La Liga espanola usando datos historicos y odds de apuestas.
+                        </p>
+                        <div class="project-stats">
+                            <div class="stat">
+                                <div class="stat-value">3,591</div>
+                                <div class="stat-label">Partidos</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-value">0.57</div>
+                                <div class="stat-label">F1-Score</div>
+                            </div>
+                        </div>
+                        <div class="tech-stack">
+                            <span>Python</span>
+                            <span>Random Forest</span>
+                            <span>XGBoost</span>
+                            <span>LightGBM</span>
+                            <span>Optuna</span>
+                        </div>
+                        <a href="projects/football-prediction/" class="project-link">Ver Proyecto</a>
+                    </div>
+                </div>
+
+                <!-- Project 3: RAG Chatbot -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>Chatbot RAG - Vehiculos Usados</h3>
+                        <div class="project-tags">
+                            <span>Deep Learning</span>
+                            <span>NLP</span>
+                            <span>LLMs</span>
+                        </div>
+                    </div>
+                    <div class="project-body">
+                        <p>
+                            Chatbot conversacional con Retrieval Augmented Generation (RAG)
+                            para busqueda semantica inteligente de vehiculos usados.
+                        </p>
+                        <div class="project-stats">
+                            <div class="stat">
+                                <div class="stat-value">38.5K</div>
+                                <div class="stat-label">Vehiculos</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-value">RAG</div>
+                                <div class="stat-label">Arquitectura</div>
+                            </div>
+                        </div>
+                        <div class="tech-stack">
+                            <span>LangChain</span>
+                            <span>FAISS</span>
+                            <span>OpenAI</span>
+                            <span>FastAPI</span>
+                            <span>React</span>
+                        </div>
+                        <a href="projects/chatbot-rag/" class="project-link">Ver Proyecto</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="skills">
+        <div class="container">
+            <h2>Competencias Tecnicas</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h4>Lenguajes</h4>
+                    <ul>
+                        <li>Python</li>
+                        <li>SQL</li>
+                        <li>R (basico)</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h4>Machine Learning</h4>
+                    <ul>
+                        <li>Scikit-learn</li>
+                        <li>CatBoost / XGBoost</li>
+                        <li>LightGBM</li>
+                        <li>Optuna</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h4>Deep Learning & NLP</h4>
+                    <ul>
+                        <li>PyTorch / TensorFlow</li>
+                        <li>LangChain</li>
+                        <li>OpenAI API</li>
+                        <li>FAISS / Embeddings</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h4>Herramientas</h4>
+                    <ul>
+                        <li>Pandas / NumPy</li>
+                        <li>Matplotlib / Seaborn</li>
+                        <li>Git / GitHub</li>
+                        <li>Jupyter / Colab</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>Bruno Moraes - Especializacion en Ciencia de Datos e IA</p>
+            <p>UTEC / MIT - 2026</p>
+            <p style="margin-top: 15px;">
+                <a href="mailto:bruno.moraes@estudiantes.utec.com.uy">bruno.moraes@estudiantes.utec.com.uy</a>
+            </p>
+        </div>
+    </footer>
+</body>
+</html>

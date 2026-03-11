@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot RAG | Bruno Moraes Portfolio</title>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <style>
+        .project-detail {
+            padding: 60px 0;
+        }
+        .back-link {
+            display: inline-block;
+            margin-bottom: 30px;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
+        .project-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .project-content h1 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+        .project-content h2 {
+            color: var(--secondary-color);
+            margin-top: 40px;
+            margin-bottom: 20px;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 10px;
+        }
+        .project-content h3 {
+            color: var(--text-color);
+            margin-top: 25px;
+            margin-bottom: 15px;
+        }
+        .project-content p {
+            color: var(--text-light);
+            margin-bottom: 15px;
+        }
+        .project-content ul, .project-content ol {
+            color: var(--text-light);
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+        .project-content li {
+            margin-bottom: 8px;
+        }
+        .results-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        .results-table th, .results-table td {
+            border: 1px solid var(--border-color);
+            padding: 12px;
+            text-align: left;
+        }
+        .results-table th {
+            background: var(--bg-secondary);
+            color: var(--primary-color);
+        }
+        .results-table tr:nth-child(even) {
+            background: var(--bg-secondary);
+        }
+        .tech-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 20px 0;
+        }
+        .tech-badges span {
+            background: var(--primary-color);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9em;
+        }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        .stat-box {
+            background: var(--bg-secondary);
+            padding: 25px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        .stat-box .value {
+            font-size: 2em;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+        .stat-box .label {
+            color: var(--text-light);
+            margin-top: 5px;
+        }
+        .pipeline-step {
+            display: flex;
+            align-items: center;
+            margin: 15px 0;
+            background: var(--bg-secondary);
+            padding: 15px 20px;
+            border-radius: 10px;
+        }
+        .step-number {
+            background: var(--primary-color);
+            color: white;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+        .step-content {
+            flex: 1;
+        }
+        .step-content strong {
+            color: var(--text-color);
+        }
+        .step-content span {
+            color: var(--text-light);
+            display: block;
+            font-size: 0.9em;
+        }
+        .problem-card {
+            background: #fef2f2;
+            border-left: 4px solid #dc2626;
+            padding: 15px 20px;
+            margin: 10px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        .problem-card strong {
+            color: #dc2626;
+        }
+        .advantage-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        .advantage-item {
+            background: #ecfdf5;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #10b981;
+        }
+        .advantage-item strong {
+            color: #059669;
+            display: block;
+            margin-bottom: 5px;
+        }
+        .advantage-item span {
+            color: var(--text-light);
+            font-size: 0.9em;
+        }
+        .code-example {
+            background: #1e293b;
+            color: #e2e8f0;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+            overflow-x: auto;
+        }
+        .architecture-diagram {
+            background: var(--bg-secondary);
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            margin: 20px 0;
+        }
+        .arch-row {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 15px 0;
+            flex-wrap: wrap;
+        }
+        .arch-box {
+            background: white;
+            border: 2px solid var(--primary-color);
+            padding: 15px 25px;
+            border-radius: 8px;
+            min-width: 140px;
+        }
+        .arch-box.highlight {
+            background: var(--primary-color);
+            color: white;
+        }
+        .arch-arrow {
+            font-size: 1.5em;
+            color: var(--primary-color);
+        }
+    </style>
+</head>
+<body>
+    <section class="project-detail">
+        <div class="container">
+            <a href="../../index.html" class="back-link">&larr; Volver al Portfolio</a>
+
+            <div class="project-content">
+                <h1>Chatbot RAG para Busqueda de Vehiculos Usados</h1>
+                <p style="font-size: 1.2em; color: var(--text-color);">
+                    Busqueda Inteligente con Retrieval Augmented Generation
+                </p>
+
+                <div class="tech-badges">
+                    <span>LangChain</span>
+                    <span>FAISS</span>
+                    <span>OpenAI</span>
+                    <span>FastAPI</span>
+                    <span>React</span>
+                    <span>Python</span>
+                </div>
+
+                <h2>Descripcion del Proyecto</h2>
+                <p>
+                    Chatbot conversacional que utiliza <strong>Retrieval Augmented Generation (RAG)</strong>
+                    para realizar busquedas semanticas inteligentes de vehiculos usados. Los usuarios
+                    describen lo que buscan en lenguaje natural y reciben recomendaciones personalizadas.
+                </p>
+
+                <div class="stats-grid">
+                    <div class="stat-box">
+                        <div class="value">38.5K</div>
+                        <div class="label">Vehiculos</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="value">1,536</div>
+                        <div class="label">Dimensiones</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="value">RAG</div>
+                        <div class="label">Arquitectura</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="value">~1s</div>
+                        <div class="label">Tiempo Respuesta</div>
+                    </div>
+                </div>
+
+                <h2>El Problema</h2>
+                <div class="problem-card">
+                    <strong>Brecha Semantica</strong><br>
+                    La busqueda tradicional no entiende intencion. "Auto para familia grande" no muestra camionetas.
+                </div>
+                <div class="problem-card">
+                    <strong>Consultas Complejas</strong><br>
+                    Necesidades multi-atributo dificiles de expresar con filtros.
+                </div>
+                <div class="problem-card">
+                    <strong>Sin Contexto</strong><br>
+                    Cada busqueda es independiente, sin memoria conversacional.
+                </div>
+
+                <h2>La Solucion: Arquitectura RAG</h2>
+                <p>
+                    RAG combina <strong>busqueda semantica</strong> con <strong>IA conversacional</strong>.
+                </p>
+
+                <div class="pipeline-step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <strong>Convertir a Texto</strong>
+                        <span>Cada vehiculo se transforma en descripcion natural</span>
+                    </div>
+                </div>
+                <div class="pipeline-step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <strong>Crear Embeddings</strong>
+                        <span>OpenAI text-embedding-3-small (1,536 dimensiones)</span>
+                    </div>
+                </div>
+                <div class="pipeline-step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <strong>Construir Vector Store</strong>
+                        <span>FAISS indexa los 38,531 vehiculos</span>
+                    </div>
+                </div>
+                <div class="pipeline-step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <strong>Consulta del Usuario</strong>
+                        <span>Se embebe y busca por similitud semantica</span>
+                    </div>
+                </div>
+                <div class="pipeline-step">
+                    <div class="step-number">5</div>
+                    <div class="step-content">
+                        <strong>Recuperar + Generar</strong>
+                        <span>Top 5 resultados + GPT-4o-mini sintetiza respuesta</span>
+                    </div>
+                </div>
+
+                <h2>Ejemplo de Conversion</h2>
+                <div class="code-example">
+                    "Subaru Outback del ano 2010. Precio: $9,200 USD.<br>
+                    Motor: gasoline de 2.5 litros. Transmision: automatic.<br>
+                    Kilometraje: 190,000 km. Tipo de carroceria: universal.<br>
+                    Color: silver. Traccion: all. Estado: owned."
+                </div>
+
+                <h2>Ventajas de RAG</h2>
+                <div class="advantage-grid">
+                    <div class="advantage-item">
+                        <strong>Super Rapido</strong>
+                        <span>Busquedas en segundos</span>
+                    </div>
+                    <div class="advantage-item">
+                        <strong>Economico</strong>
+                        <span>1 embedding + 1 llamada LLM</span>
+                    </div>
+                    <div class="advantage-item">
+                        <strong>Busqueda Semantica</strong>
+                        <span>Sin palabras exactas</span>
+                    </div>
+                    <div class="advantage-item">
+                        <strong>Persistente</strong>
+                        <span>Vector store en disco</span>
+                    </div>
+                    <div class="advantage-item">
+                        <strong>Simple</strong>
+                        <span>Menos trabajo que fine-tuning</span>
+                    </div>
+                    <div class="advantage-item">
+                        <strong>Conversacional</strong>
+                        <span>Memoria de contexto</span>
+                    </div>
+                </div>
+
+                <h2>Stack Tecnologico</h2>
+                <table class="results-table">
+                    <tr>
+                        <th>Componente</th>
+                        <th>Tecnologia</th>
+                        <th>Funcion</th>
+                    </tr>
+                    <tr>
+                        <td>Orquestacion</td>
+                        <td>LangChain</td>
+                        <td>Framework RAG</td>
+                    </tr>
+                    <tr>
+                        <td>Embeddings</td>
+                        <td>OpenAI</td>
+                        <td>text-embedding-3-small</td>
+                    </tr>
+                    <tr>
+                        <td>Vector Store</td>
+                        <td>FAISS</td>
+                        <td>Busqueda por similitud</td>
+                    </tr>
+                    <tr>
+                        <td>LLM</td>
+                        <td>GPT-4o-mini</td>
+                        <td>Generacion de respuestas</td>
+                    </tr>
+                    <tr>
+                        <td>Backend</td>
+                        <td>FastAPI</td>
+                        <td>API REST</td>
+                    </tr>
+                    <tr>
+                        <td>Frontend</td>
+                        <td>React</td>
+                        <td>Interfaz chatbot</td>
+                    </tr>
+                </table>
+
+                <h2>Conclusiones</h2>
+                <ol>
+                    <li><strong>RAG es ideal para recuperacion de datos</strong></li>
+                    <li><strong>Embeddings pre-entrenados capturan relaciones semanticas</strong> sin fine-tuning</li>
+                    <li><strong>FAISS permite busqueda lista para produccion</strong> con infraestructura minima</li>
+                    <li><strong>Memoria conversacional agrega valor</strong> para refinar busquedas</li>
+                </ol>
+
+                <h2>Equipo</h2>
+                <ul>
+                    <li>Nicolas Fripp</li>
+                    <li>Diego Aguiar</li>
+                    <li>Bruno Moraes</li>
+                </ul>
+
+                <p style="margin-top: 40px; text-align: center; color: var(--text-light);">
+                    <em>Proyecto Final - Deep Learning Febrero 2026 | Especializacion UTEC/MIT</em>
+                </p>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
