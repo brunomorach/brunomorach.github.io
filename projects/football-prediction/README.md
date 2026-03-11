@@ -13,7 +13,7 @@ Sistema de prediccion de resultados de partidos de futbol de **La Liga espanola*
 
 ### Problema y Motivacion
 
-> "La gente quiere obtener ganancias del fútbol y conocer los resultados con anticipación, pero la naturaleza impredecible de este deporte hace que esto sea casi imposible; por lo tanto, creamos un modelo de Machine Learning para predecir los partidos de fútbol."
+> "Las personas quieren obtener ganancias del fútbol y conocer los resultados con anticipación, pero la naturaleza impredecible de este deporte hace que esto sea casi imposible; por lo tanto, creamos un modelo de Machine Learning para predecir los partidos de fútbol."
 
 El futbol es inherentemente impredecible, lo que hace de este un desafio interesante para Machine Learning.
 
