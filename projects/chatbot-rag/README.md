@@ -60,7 +60,7 @@ RAG combina **busqueda semantica** con **IA conversacional** para ofrecer una ex
 
 ### Caracteristicas por Vehiculo
 
-- Fabricante, modelo, ano, precio
+- Fabricante, modelo, año, precio
 - Motor (combustible, cilindrada, tipo)
 - Transmision
 - Tipo de carroceria, color, traccion
