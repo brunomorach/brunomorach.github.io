@@ -80,7 +80,7 @@ Crear un modelo predictivo que permita:
 - Precio promedio: ~USD 200,000
 
 ### Correlaciones Principales
-- **Area cubierta** y **banos**: alta correlacion con precio
+- **Area cubierta** y **baños**: alta correlacion con precio
 - **Barrio**: factor determinante del precio
 - **Departamento**: Maldonado con precios superiores
 
