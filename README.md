@@ -43,7 +43,7 @@ Modelo predictivo para estimar precios de propiedades inmobiliarias en Uruguay u
 ### 2. From Data to Goal - Prediccion de Partidos de Futbol
 **Machine Learning | Clasificacion Multiclase | Sports Analytics**
 
-Sistema de prediccion de resultados de partidos de futbol de La Liga espanola utilizando datos historicos y odds de casas de apuestas.
+Sistema de prediccion de resultados de partidos de futbol de La Liga española utilizando datos historicos y odds de casas de apuestas.
 
 - **Dataset**: 3,591 partidos, 116 features (10 temporadas)
 - **Modelos**: Random Forest, LightGBM, XGBoost
