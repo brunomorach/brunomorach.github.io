@@ -191,7 +191,7 @@ Todos optimizados con **Optuna** para hiperparametros.
 ## Equipo
 
 - **Nicolas Fripp**
-- **Emiliano Brana**
+- **Emiliano Braña**
 - **Bruno Moraes**
 
 ---
