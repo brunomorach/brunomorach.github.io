@@ -133,7 +133,7 @@ Con un precio promedio de USD 200,000:
 Las variables mas influyentes en el modelo:
 1. Area cubierta (m2)
 2. Barrio
-3. Cantidad de banos
+3. Cantidad de baños
 4. Cantidad de dormitorios
 5. Departamento
 
